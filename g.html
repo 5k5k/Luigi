@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<script language="javascript">
+function open(){
+    var loadDateTime = new Date();
+    var state = window.open("comicoth", 'home');
+    window.setTimeout(function() {
+        var timeOutDateTime = new Date();
+        if(timeOutDateTime - loadDateTime < 5000) {
+            window.location = "market://details?id=com.toast.comico.th";
+        } else {
+            window.close();
+        }
+    },25);
+}
+
+function open2(){
+      var state = null;
+  try {
+   state = window.location("comicoth://home");
+       window.setTimeout(function() {
+        var timeOutDateTime = new Date();
+        // if(timeOutDateTime - loadDateTime < 5000) {
+            window.location = "market://details?id=com.toast.comico.th";
+        // } else {
+            // window.close();
+        // }
+    },1500);
+  } catch(e) {}
+  
+//   if (state) {
+//   window.close();
+//   } else {
+//   window.location = "market://details?id=com.toast.comico.th";
+//   }
+}
+</script>
+</head>
+
+<body>
+<div style="font-size:80px">
+<a href="market://details?id=com.toast.comico.th">google</a>
+<a href="comicoth://home">home</a>
+<button onclick="open2()">button</button>
+</div>
+</body>
+</html>
